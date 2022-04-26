@@ -3,6 +3,12 @@
 #include <vector>
 #include <algorithm>
 
+#include <iostream>
+
+
+struct Vehicle;
+struct HighwayPatrol;
+
 struct Highway
 {
     void changeSpeed(int newSpeed);
@@ -13,4 +19,6 @@ private:
     void removeVehicleInternal(Vehicle* v);
     int speedLimit = 65;
     std::vector<Vehicle*> vehicles;
+    std::string getVehicleType(Vehicle* v);
+    friend HighwayPatrol;
 };
